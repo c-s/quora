@@ -17,6 +17,7 @@ main = do
                       (start, end) = splitAt splitIndex str
                   in ((read start) :: Int, (read $ tail end) :: Int)) <$> graphStrs
   -- create a tree from the graph.
+  -- at least one pair is expected in the tree.
   let tree = createTree (fst $ head graph) graph
   -- create a tree with a node denoting
   -- (node index, time to read this node, expected time to read until no more questions are available starting from this node).
